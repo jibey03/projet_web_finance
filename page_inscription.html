@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire inscription</title>
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/font.css">
+    <link rel="stylesheet" href="style/style_inscription.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="header1">
+            <div class="menu-burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="logo">
+                <img src="images/logo_index.png"/>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="block_inscription">
+        <h3 style="color: black; position:relative; margin-left:50px">Inscription</h3>
+
+        <form action="caca.php" method="post" id="myForm">
+            <label for="name">Nom :</label><br><br>
+            <input type="text" id="name" name="name" class="case_formulaire" required><br>
+            <label for="prenom">Prénom :</label><br><br>
+            <input type="text" id="prenom" name="prenom" class="case_formulaire" required><br>
+            <label for="email">Email :</label><br><br>
+            <input type="email" id="email" name="email" class="case_formulaire" required><br>
+            <label for="date">Date :</label><br><br>
+            <input type="date"  id="date de naissance" name="date de naissance" class="case_formulaire" required><br>
+            <label for="adress">adresse:</label><br><br>
+            <input type="adress" id="adresse" name="adresse" class="case_formulaire" required><br>
+            <input type="submit" value="Envoyer" class="boutton">
+        </form>
+
+
+        <script>
+            const form = document.getElementById("myForm");
+            const nameInput = document.getElementById("name");
+            const prenomInput = document.getElementById("prenom");
+            const emailInput=document.getElementById("email");
+            const dateInput=document.getElementById("date");
+            const adressInput=document.getElementById("adress");
+            form.addEventListener("submit", function(event){
+                event.preventDefault();
+
+                if (nameValue === "" || emailValue === "" || addressValue === "" || postalCodeValue === "" || cityValue === "") {
+                    alert("Veuillez remplir tous les champs");
+                    return;
+                }
+
+                if (!isValidEmail(emailValue)) {
+                    alert("Veuillez entrer une adresse email valide");
+                    return;
+                }
+
+                if (postalCodeValue.length !== 5 || isNaN(postalCodeValue)) {
+                    alert("Veuillez entrer un code postal valide");
+                    return;
+                }
+
+
+                form.submit();
+
+
+                function isValidEmail(email) {
+                    const emailRegex = /\S+@\S+\.\S+/;
+                    return emailRegex.test(email);
+                }
+            });
+        </script>
+    </div>
+    
+</body>
+</html>
