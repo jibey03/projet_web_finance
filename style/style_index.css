@@ -188,3 +188,105 @@ header {background-color: #222831;
                                                                                 
 
 
+
+/* footer */
+footer {
+    background: #222831;
+    padding: 5px;
+    position: relative;
+    border-top: #ccc 1px solid;
+}
+
+footer h3 {
+    color: #c1a57b;
+    font-size: medium;
+    font-weight: bold;
+    line-height: 100px;
+}
+
+footer p, a {
+    color: white;
+    font-weight: normal;
+}
+
+footer ul li {
+    padding-bottom: 8px;
+}
+
+  footer ul li a{
+    color: white;
+    text-decoration: none;
+    font-weight: normal;
+    list-style-type: none;
+    padding: 0px;
+  }
+
+  footer section {
+    display: flex;
+    justify-content: flex-start;
+    gap: 17%;
+    margin-top: 30px;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-bottom: 25px;
+    position: relative;
+    bottom: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  footer .flex1 {
+    display: flex;
+    justify-content: center;
+  }
+
+  footer .flex2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+  }
+
+  footer .flex2 ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .flex2 ul li::before{
+    content: "•"; 
+    color: #ccc; 
+    font-size: 1.5em; 
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+
+
+  /*RESPONSIVE*/
+
+
+  @media screen and (max-width: 745px) {
+    footer section {
+       flex-direction: column; 
+     }
+ 
+     footer div{
+         flex-direction: column; 
+       }
+
+     footer .flex {
+       margin-bottom: 15px; 
+     }
+
+     footer ul{
+      padding-bottom: 25px;
+     }
+     footer .flex div+div{
+      border-top: 1px solid #ccc;
+     }
+     }
