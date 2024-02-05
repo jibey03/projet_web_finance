@@ -53,7 +53,7 @@
             <div class="search-bar">
                 <input 
                 id="mySearch"
-                type="search"
+                type="text"
                 onkeyup="searchFunction()"
                 placeholder="Start typing to search..." 
                 list="search-suggestions" 
@@ -78,15 +78,15 @@
 
             <script>
                 function searchFunction(){
-                    const input = document.getElementById('mySearch').value.toUppercase();
+                    const input = document.getElementById('mySearch').value.toUpperCase();
                     const cardContainer = document.getElementById('cards_list');
 
                     const cards = cardContainer.getElementsByClassName('center_cards');
 
                     for(let i =0; i < cards.length; i++) {
-                        let title = cards[i].querySelector(".calculator_cards h3.card-title");
+                        let title = cards[i].querySelector(".calculator_cards h3.card_title");
 
-                        if(title.innerText.toUppercase().indexOf(input) > -1) {
+                        if(title.innerText.toUpperCase().indexOf(input) > -1) {
                             cards[i].style.display = "";
                         } else{
                             cards[i].style.display = "none";
@@ -96,50 +96,7 @@
             </script>
 
 
-            <!-- <script> TEST 1
-                function searchFunction() {
-                    // Declare variables
-                    var input, filter, ul, li, a, i;
-                    input = document.getElementById("mySearch");
-                    filter = input.value.toUpperCase();
-                    ul = document.getElementById("content");
-                    li = ul.getElementsByTagName('calculator_cards');
-                
-                    // Loop through all list items, and hide those who don't match the search query
-                    for (i = 0; i < li.length; i++) {
-                    a = li[i].getElementsByTagName("a")[0];
-                    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                        li[i].style.display = "";
-                    } else {
-                        li[i].style.display = "none";
-                    }
-                    }
-                }
-            </script>
-
-            <script> TEST 2
-                function searchFunction() {
-                    // Locate the card elements
-                    let cards = document.querySelectorAll("div.center_cards")
-                    // Locate the search input
-                    let search_query = document.getElementById("div.content > h3").value;
-                    // Loop through the cards
-                    for (var i = 0; i < cards.length; i++) {
-                    // If the text is within the card...
-                    if(cards[i].innerText.toLowerCase()
-                        // ...and the text matches the search query...
-                        .includes(search_query.toLowerCase())) {
-                        // ...remove the `.is-hidden` class.
-                        cards[i].classList.remove("is-hidden");
-                    } else {
-                        // Otherwise, add the class.
-                        cards[i].classList.add("is-hidden");
-                    }
-                    }
-                }
-            </script> -->
-
-
+            
             <!-- CALCULATRICES -->
 
             <div class="cards_section" id="cards_list">
@@ -148,7 +105,7 @@
                     <div class="calculator_cards">
                         <a href="#">
                             <div class="content">
-                                <h3 class="card-title">Frais</h3>
+                                <h3 class="card_title">Frais</h3>
                             </div>
                             <img src="images/calcl1.jpg" alt="calc" />
                         </a>
@@ -249,6 +206,7 @@
             </div>
 
 
+            
             <!-- FOOTER-->
             <footer>
                 <div class="flex1">

@@ -108,7 +108,7 @@ header {background-color: #222831;
     align-items: center;
     align-content: center;}
 
-    input[type=search]{background: rgba(255, 255, 255, 0.212);
+    input[type=text]{background: rgba(255, 255, 255, 0.212);
                     color : darkgray;
                     text-align: left;
                     border: 0.5px solid rgba(255, 255, 255, 0.212);
