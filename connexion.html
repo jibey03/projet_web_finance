@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire Simple</title>
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="style/style_index.css" />
+    <link rel="stylesheet" href="styles/font.css" />
+</head>
+<body>
+    <div class="connexion">
+        <h2>Connexion</h2>
+        <form action="caca.php" method="post" id="myForm">
+            <div class="input-container">
+                <label for="email">Email :</label><br>
+                <input type="text" id="email" name="email" required><br>
+            </div>
+            <div class="input-container">
+                <label for="motdepasse">Mot de passe :</label><br>
+                <input type="password" id="motdepasse" name="motdepasse" required><br>
+            </div>
+            <input type="submit" value="Envoyer">
+        </form> 
+    </div>
+    <script>
+        const form = document.getElementById("myForm");
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            const emailValue = form.elements.email.value;
+            const motDePasseValue = form.elements.motdepasse.value;
+            
+            if (motDePasseValue === "" || emailValue === "") {
+                alert("Veuillez remplir tous les champs");
+                return;
+            }
+            if (!isValidEmail(emailValue)) {
+                alert("Veuillez entrer une adresse email valide");
+                return;
+            }
+            
+            form.submit();
+        });
+        
+        function isValidEmail(email) {
+            const emailRegex = /\S+@\S+\.\S+/;
+            return emailRegex.test(email);
+        }    
+    </script>
+</body>
+</html>

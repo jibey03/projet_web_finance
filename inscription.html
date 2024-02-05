@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'Inscription</title>
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="style/style_index.css" />
+    <link rel="stylesheet" href="styles/font.css" />
+</head>
+<body>
+    <div class="connexion">
+        <h2>Formulaire d'Inscription</h2>
+        <form action="inscription.php" method="post" id="formInscription">
+            <div class="input-container">
+                <label for="name">Nom </label> <br>
+                <input type="text" id="name" name="name" required> 
+            </div>
+            <div class="input-container">
+                <label for="prenom">Prénom </label> <br>
+                <input type="text" id="prenom" name="prenom" required> 
+            </div>
+            <div class="input-container"><br>
+                <label for="email">Email </label><br>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-container">
+                <label for="date-de-naissance">Date de naissance :</label><br>
+                <input type="date" id="date-de-naissance" name="date-de-naissance" required>
+            </div>
+            <div class="input-container">
+                <label for="adresse">Adresse </label><br>
+                <input type="text" id="adresse" name="adresse" required>
+            </div>
+            <div class="input-container">
+                <label for="motdepasse">Mot de passe </label><br>
+                <input type="password" id="motdepasse" name="motdepasse" required>
+            </div>
+            <input type="submit" value="Envoyer">
+        </form> 
+    </div>
+    <script>
+    </script>
+</body>
+</html>
