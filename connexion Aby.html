@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="style/style_indexx.css" />
+    <link rel="stylesheet" href="styles/font.css" />
+</head>
+<body>
+    <div class="form-box">
+        <h2>Connexion</h2>
+        <form action="caca.php" method="post" id="formConnexion">
+            <div class="field-group">
+                <label for="email">Email :</label>
+                <input type="text" id="email" name="email" required>
+            </div>
+            <div class="field-group">
+                <label for="motdepasse">Mot de passe :</label>
+                <input type="password" id="motdepasse" name="motdepasse" required>
+            </div>
+            <input type="submit" value="Envoyer">
+        </form> 
+    </div>
+    <script>
+        const formConnexion = document.getElementById("formConnexion");
+        formConnexion.addEventListener("submit", function(event) {
+            event.preventDefault();
+            const email = formConnexion.elements.email.value;
+            const motDePasse = formConnexion.elements.motdepasse.value;
+            
+            if (motDePasse === "" || email === "") {
+                alert("Veuillez remplir tous les champs");
+                return;
+            }
+            if (!isValidEmail(email)) {
+                alert("Veuillez entrer une adresse email valide");
+                return;
+            }
+            
+            formConnexion.submit();
+        });
+        
+        function isValidEmail(email) {
+            const emailRegex = /\S+@\S+\.\S+/;
+            return emailRegex.test(email);
+        }    
+    </script>
+</body>
+</html>
