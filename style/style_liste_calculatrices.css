@@ -30,6 +30,44 @@ header {background-color: #222831;
             flex-direction: row;
             justify-content: flex-start;
             align-items: center;}
+                              
+        .sidebar{position: fixed;
+                top:0;
+                left: 0;
+                height: 100vh;
+                width: 350px;
+                z-index: 999;
+                background-color: rgba(0, 0, 0, 0.2);
+                backdrop-filter: blur(10px);
+                box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: 30px;
+                padding: 40px;}
+
+            .sidebar li{width: 100%;border-radius: 8px; height:40px; transition: all 0.3s;}
+            .sidebar li:hover {background-color: rgba(255, 255, 255, 0.2);}
+            .sidebar a{width: 100%;
+                      font-weight: bold;
+                      color:white;
+                      font-size: 20px;
+                      line-height: 30px;}
+
+              .sidebar li:nth-child(3) a{color: #C1A57B;}
+
+              .sidebar .sub_menu{margin-left: 20px;
+                                padding-left: 20px;
+                                padding-top: 5px;
+                                border-left: 1px solid #f6f6f6;}
+
+                  .sub_menu a{font-weight: 400;
+                            font-size: 16px;
+                            line-height: 20px;}
+
+                  .sub_menu li:nth-child(3) a{color: white;}
+
 
     .connexion-inscrip{display: flex;
                     flex-direction: row;
@@ -54,25 +92,13 @@ header {background-color: #222831;
 
         .login-icon{display : none}
 
-        .menu-burger {cursor: pointer;
-            display: flex; /* Utilisez flex pour aligner les barres du burger */
-            flex-direction: column; /* Empile les barres verticalement */
-            justify-content: space-around; /* Espacement entre les barres */
-            padding: 10px; /* Espacement autour du menu burger */
-            height: 40px; /* Hauteur totale du menu burger */}
-
-            .menu-burger span {display: block;
-                        width: 30px; /* Largeur des barres du menu burger */
-                        height: 3px; /* Hauteur des barres du menu burger */
-                        background-color: white;
-                        border-radius: 2px;}
+        
 
 /* Responsive HEADER */
 @media (max-width: 1000px){
     .header1{justify-content: space-between;
             gap: 10vw;}
 
-    .menu-burger span{width: 30px; padding: 1px;}
     .logo{margin-left: 2vw;}
       .logo img{width: 30vw;}
     
@@ -80,6 +106,9 @@ header {background-color: #222831;
     .login-icon{display: inline;
                 width: 7vw}}
 
+@media (max-width: 430px) {
+    .sidebar{width: 100%}
+}
 
 
 
