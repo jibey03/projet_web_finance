@@ -75,14 +75,35 @@
 
 
             <!-- JS BARRE DE RECHERCHE -->
+
             <script>
+                function searchFunction(){
+                    const input = document.getElementById('mySearch').value.toUppercase();
+                    const cardContainer = document.getElementById('cards_list');
+
+                    const cards = cardContainer.getElementsByClassName('center_cards');
+
+                    for(let i =0; i < cards.length; i++) {
+                        let title = cards[i].querySelector(".calculator_cards h3.card-title");
+
+                        if(title.innerText.toUppercase().indexOf(input) > -1) {
+                            cards[i].style.display = "";
+                        } else{
+                            cards[i].style.display = "none";
+                        }
+                    }
+                }
+            </script>
+
+
+            <!-- <script> TEST 1
                 function searchFunction() {
                     // Declare variables
                     var input, filter, ul, li, a, i;
                     input = document.getElementById("mySearch");
                     filter = input.value.toUpperCase();
-                    ul = document.getElementById("myMenu");
-                    li = ul.getElementsByTagName("li");
+                    ul = document.getElementById("content");
+                    li = ul.getElementsByTagName('calculator_cards');
                 
                     // Loop through all list items, and hide those who don't match the search query
                     for (i = 0; i < li.length; i++) {
@@ -96,119 +117,196 @@
                 }
             </script>
 
+            <script> TEST 2
+                function searchFunction() {
+                    // Locate the card elements
+                    let cards = document.querySelectorAll("div.center_cards")
+                    // Locate the search input
+                    let search_query = document.getElementById("div.content > h3").value;
+                    // Loop through the cards
+                    for (var i = 0; i < cards.length; i++) {
+                    // If the text is within the card...
+                    if(cards[i].innerText.toLowerCase()
+                        // ...and the text matches the search query...
+                        .includes(search_query.toLowerCase())) {
+                        // ...remove the `.is-hidden` class.
+                        cards[i].classList.remove("is-hidden");
+                    } else {
+                        // Otherwise, add the class.
+                        cards[i].classList.add("is-hidden");
+                    }
+                    }
+                }
+            </script> -->
 
 
             <!-- CALCULATRICES -->
 
-            <div class="section_cards">
+            <div class="cards_section" id="cards_list">
 
-                <!-- <ul class="cartes" id="myMenu"> -->
-
-                    <div class="center_cards">
-                        <div class="calculator_cards">
-                            <a href="#">
-                                <div class="content">
-                                    <li class="title"><h3>Frais</h3></li>
-                                </div>
-                                <img src="images/calcl1.jpg" alt="calc" />
-                            </a>
-                        </div>
+                <div class="center_cards">
+                    <div class="calculator_cards">
+                        <a href="#">
+                            <div class="content">
+                                <h3 class="card-title">Frais</h3>
+                            </div>
+                            <img src="images/calcl1.jpg" alt="calc" />
+                        </a>
                     </div>
+                </div>
 
+            
+                <div class="center_cards">
+                    <div class="calculator_cards">
+                        <a href="#">
+                            <div class="content">
+                                <h3 class="card_title">Habitudes de consommation</h3>
+                            </div>
+                            <img src="images/calcl2.jpg" alt="calc" />
+                        </a>
+                    </div>
+                </div>
                 
-                    <div class="center_cards">
-                        <div class="calculator_cards">
-                            <a href="#">
-                                <div class="content">
-                                    <li class="title"><h3>Habitudes de consommation</h3></li>
-                                </div>
-                                <img src="images/calcl2.jpg" alt="calc" />
-                            </a>
-                        </div>
+            
+                <div class="center_cards">
+                    <div class="calculator_cards">
+                        <a href="#">
+                            <div class="content">
+                                <h3 class="card_title">Coût des études</h3>
+                            </div>
+                            <img src="images/calcl3.jpg" alt="calc" />
+                        </a>
                     </div>
-                    
+                </div>
                 
-                    <div class="center_cards">
-                        <div class="calculator_cards">
-                            <a href="#">
-                                <div class="content">
-                                    <li class="title"><h3>Coût des études</h3></li>
-                                </div>
-                                <img src="images/calcl3.jpg" alt="calc" />
-                            </a>
-                        </div>
+            
+                <div class="center_cards">
+                    <div class="calculator_cards">
+                        <a href="#">
+                            <div class="content">
+                                <h3 class="card_title">Intérêts composés</h3>
+                            </div>
+                            <img src="images/calcl4.jpg" alt="calc" />
+                        </a>
                     </div>
+                </div>
+
+                <div class="center_cards">
+                    <div class="calculator_cards">
+                        <a href="#">
+                            <div class="content">
+                                <h3 class="card_title">Epargne REE</h3>
+                            </div>
+                            <img src="images/calcl5.jpg" alt="calc" />
+                        </a>
+                    </div>
+                </div>
                     
-                
-                    <div class="center_cards">
-                        <div class="calculator_cards">
-                            <a href="#">
-                                <div class="content">
-                                    <li class="title"><h3>Intérêts composés</h3></li>
-                                </div>
-                                <img src="images/calcl4.jpg" alt="calc" />
-                            </a>
-                        </div>
+                <div class="center_cards">
+                    <div class="calculator_cards">
+                        <a href="#">
+                            <div class="content">
+                                <h3 class="card_title">Epargne REER</h3>
+                            </div>
+                            <img src="images/calcl6.jpg" alt="calc" />
+                        </a>
                     </div>
+                </div>
 
-                    <div class="center_cards">
-                        <div class="calculator_cards">
-                            <a href="#">
-                                <div class="content">
-                                    <li class="title"><h3>Epargne REE</h3></li>
-                                </div>
-                                <img src="images/calcl5.jpg" alt="calc" />
-                            </a>
-                        </div>
+                <div class="center_cards">
+                    <div class="calculator_cards">
+                        <a href="#">
+                            <div class="content">
+                                <h3 class="card_title">Rendement d'un portefeuille</h3>
+                            </div>
+                            <img src="images/calcl7.jpg" alt="calc" />
+                        </a>
                     </div>
-                     
-                    <div class="center_cards">
-                        <div class="calculator_cards">
-                            <a href="#">
-                                <div class="content">
-                                    <li class="title"><h3>Epargne REER</h3></li>
-                                </div>
-                                <img src="images/calcl6.jpg" alt="calc" />
-                            </a>
-                        </div>
-                    </div>
+                </div>
 
-                    <div class="center_cards">
-                        <div class="calculator_cards">
-                            <a href="#">
-                                <div class="content">
-                                    <li class="title"><h3>Rendement d'un portefeuille</h3></li>
-                                </div>
-                                <img src="images/calcl7.jpg" alt="calc" />
-                            </a>
-                        </div>
+                <div class="center_cards">
+                    <div class="calculator_cards">
+                        <a href="#">
+                            <div class="content">
+                                <h3 class="card_title">Valeur nette</h3>
+                            </div>
+                            <img src="images/calcl8.jpg" alt="calc" />
+                        </a>
                     </div>
+                </div>
 
-                    <div class="center_cards">
-                        <div class="calculator_cards">
-                            <a href="#">
-                                <div class="content">
-                                    <li class="title"><h3>Valeur nette</h3></li>
-                                </div>
-                                <img src="images/calcl8.jpg" alt="calc" />
-                            </a>
-                        </div>
+                <div class="center_cards">
+                    <div class="calculator_cards">
+                        <a href="#">
+                            <div class="content">
+                                <h3 class="card_title">Flux de trésorerie</h3>
+                            </div>
+                            <img src="images/calcl9.jpg" alt="calc" />
+                        </a>
                     </div>
-
-                    <div class="center_cards">
-                        <div class="calculator_cards">
-                            <a href="#">
-                                <div class="content">
-                                    <li class="title"><h3>Flux de trésorerie</h3></li>
-                                </div>
-                                <img src="images/calcl9.jpg" alt="calc" />
-                            </a>
-                        </div>
-                    </div>
+                </div>
                     
-                <!-- </ul> -->
-
             </div>
+
+
+            <!-- FOOTER-->
+            <footer>
+                <div class="flex1">
+                    <a href="file:///C:/Users/floca/Desktop/HETIC/Projet%20web/projet_web/test.html"><img src="Images/logo_index.png" alt="logo_smart_financy" width=150px>
+                </div>
+                <section class="flex">
+                   
+                    <div>
+                        <h3>A propos</h3>
+                        <ul>
+                            <li><a href="https://www.airbnb.fr/help/home?from=footer">Centre d'aide</a></li>
+                            <li><a href="https://www.airbnb.fr/against-discrimination">Lutte contre la discrimination</a></li>
+                            <li><a href="https://www.airbnb.fr/accessibility">Assistance handicap</a></li>
+                            <li><a href="https://www.airbnb.fr/accessibility">Option d'annulation</a></li>
+                        </ul>
+                    </div>
+        
+                    <div>
+                        <h3>Pages</h3>
+                        <ul>
+                            <li><a href="https://www.airbnb.fr/help/home?from=footer">Page 1</a></li>
+                            <li><a href="https://www.airbnb.fr/aircover">Page 2</a></li>
+                            <li><a href="https://www.airbnb.fr/against-discrimination">Page 3</a></li>
+                            <li><a href="https://www.airbnb.fr/accessibility">Page 4</a></li>
+                            <li><a href="https://www.airbnb.fr/accessibility">Page 5</a></li>
+                        </ul>
+                    </div>
+        
+                    <div>
+                        <h3>Ressources</h3>
+                        <ul>
+                            <li><a href="https://www.airbnb.fr/help/home?from=footer">Newsroom</a></li>
+                            <li><a href="https://www.airbnb.fr/aircover">Nouvelles fonctionnalités</a></li>
+                            <li><a href="https://www.airbnb.fr/against-discrimination">Carrières</a></li>
+                            <li><a href="https://www.airbnb.fr/accessibility">Investisseurs</a></li>
+                            <li><a href="https://www.airbnb.fr/accessibility">Cartes cadeaux</a></li>
+                            <li><a href="https://www.airbnb.fr/accessibility">J'ai un problème</a></li>
+                        </ul>
+                    </div>
+                </section>
+                
+                    <div class="flex2">
+                        <p>© 2024 Smart Financy,Inc</p>
+                        <ul>
+                            <li><a href="https://www.airbnb.fr/terms/privacy_policy">Confidentialité</a></li>
+                            <li><a href="https://www.airbnb.fr/terms">Conditions générales</a></li>
+                            <li><a href="https://www.airbnb.fr/terms">Plan du site</a></li>
+                            <li><a href="https://www.airbnb.fr/terms">Fonctionnement du site</a></li>
+                            <li><a href="https://www.airbnb.fr/terms">Infos surs l'entreprise</a></li>
+                        </ul>
+                    
+                    
+                    
+                        <a href="Langues">Français (FR)</a>
+                        <a>EUR</a>
+                    </div>
+                
+            </footer>
     
         </main>
 
