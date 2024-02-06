@@ -30,6 +30,44 @@ header {background-color: #222831;
             flex-direction: row;
             justify-content: flex-start;
             align-items: center;}
+                              
+        .sidebar{position: fixed;
+                top:0;
+                left: 0;
+                height: 100vh;
+                width: 350px;
+                z-index: 999;
+                background-color: rgba(0, 0, 0, 0.2);
+                backdrop-filter: blur(10px);
+                box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: 30px;
+                padding: 40px;}
+
+            .sidebar li{width: 100%;border-radius: 8px; height:40px; transition: all 0.3s;}
+            .sidebar li:hover {background-color: rgba(255, 255, 255, 0.2);}
+            .sidebar a{width: 100%;
+                      font-weight: bold;
+                      color:white;
+                      font-size: 20px;
+                      line-height: 30px;}
+
+              .sidebar li:nth-child(3) a{color: #C1A57B;}
+
+              .sidebar .sub_menu{margin-left: 20px;
+                                padding-left: 20px;
+                                padding-top: 5px;
+                                border-left: 1px solid #f6f6f6;}
+
+                  .sub_menu a{font-weight: 400;
+                            font-size: 16px;
+                            line-height: 20px;}
+
+                  .sub_menu li:nth-child(3) a{color: white;}
+
 
     .connexion-inscrip{display: flex;
                     flex-direction: row;
@@ -54,25 +92,13 @@ header {background-color: #222831;
 
         .login-icon{display : none}
 
-        .menu-burger {cursor: pointer;
-            display: flex; /* Utilisez flex pour aligner les barres du burger */
-            flex-direction: column; /* Empile les barres verticalement */
-            justify-content: space-around; /* Espacement entre les barres */
-            padding: 10px; /* Espacement autour du menu burger */
-            height: 40px; /* Hauteur totale du menu burger */}
-
-            .menu-burger span {display: block;
-                        width: 30px; /* Largeur des barres du menu burger */
-                        height: 3px; /* Hauteur des barres du menu burger */
-                        background-color: white;
-                        border-radius: 2px;}
+        
 
 /* Responsive HEADER */
 @media (max-width: 1000px){
     .header1{justify-content: space-between;
             gap: 10vw;}
 
-    .menu-burger span{width: 30px; padding: 1px;}
     .logo{margin-left: 2vw;}
       .logo img{width: 30vw;}
     
@@ -80,6 +106,9 @@ header {background-color: #222831;
     .login-icon{display: inline;
                 width: 7vw}}
 
+@media (max-width: 430px) {
+    .sidebar{width: 100%}
+}
 
 
 
@@ -108,7 +137,7 @@ header {background-color: #222831;
     align-items: center;
     align-content: center;}
 
-    input[type=search]{background: rgba(255, 255, 255, 0.212);
+    input[type=text]{background: rgba(255, 255, 255, 0.212);
                     color : darkgray;
                     text-align: left;
                     border: 0.5px solid rgba(255, 255, 255, 0.212);
@@ -119,16 +148,17 @@ header {background-color: #222831;
 
 /* CALCULATORS CARDS */
 
-.section_cards{display: flex;
+.cards_section{display: flex;
             flex-direction: row;
             flex-wrap: wrap;
             gap: 10px;
             justify-content: space-between;
             align-items: center;
             align-content: center;
-            padding: 45px 20vw;}
+            padding: 45px 20vw;
+            margin-bottom: 150px;}
 
-.section_cards h3{text-transform: none;}
+.cards_section h3{text-transform: none;}
 
     .center_cards {
         display: flex;
@@ -179,7 +209,7 @@ header {background-color: #222831;
 
 /* Responsive CALCULATRICES */
 @media (max-width: 1000px) {
-  .section_cards{flex-direction: column;
+  .cards_section{flex-direction: column;
                   gap: 20px;
                   padding: 0 8vw}
     .calculator_cards{width: 80vw;
@@ -187,6 +217,108 @@ header {background-color: #222831;
 
                                                                                 
 
+/* footer */
+
+  footer {
+    background: #222831;
+    padding: 5px;
+    position: relative;
+    border-top: #ccc 1px solid;
+}
+
+footer h3 {
+    color: #c1a57b;
+    font-size: medium;
+    font-weight: bold;
+    line-height: 100px;
+}
+
+footer p, a {
+    color: white;
+    font-weight: normal;
+}
+
+footer ul li {
+    padding-bottom: 8px;
+}
+
+  footer ul li a{
+    color: white;
+    text-decoration: none;
+    font-weight: normal;
+    list-style-type: none;
+    padding: 0px;
+  }
+
+  footer section {
+    display: flex;
+    justify-content: flex-start;
+    gap: 17%;
+    margin-top: 30px;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-bottom: 25px;
+    position: relative;
+    bottom: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  footer .flex1 {
+    display: flex;
+    justify-content: center;
+  }
+
+  footer .flex2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+  }
+
+  footer .flex2 ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .flex2 ul li::before{
+    content: "•"; 
+    color: #ccc; 
+    font-size: 1.5em; 
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+
+
+  /*RESPONSIVE*/
+
+
+  @media screen and (max-width: 745px) {
+    footer section {
+       flex-direction: column; 
+     }
+ 
+     footer div{
+         flex-direction: column; 
+       }
+
+     footer .flex {
+       margin-bottom: 15px; 
+     }
+
+     footer ul{
+      padding-bottom: 25px;
+     }
+     footer .flex div+div{
+      border-top: 1px solid #ccc;
+     }
+     }
 
 
 /* footer */
