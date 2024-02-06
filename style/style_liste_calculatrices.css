@@ -216,8 +216,12 @@ header {background-color: #222831;
   .cards_section{flex-direction: column;
                   gap: 20px;
                   padding: 0 8vw}
-    .calculator_cards{width: 80vw;
+  .calculator_cards{width: 80vw;
                       height: 30vw;}}
+  .cards_section h3{
+    font-size: 18px;
+    line-height: 20px;
+  }
 
                                                                                 
 
