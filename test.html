@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TEST Smart Financy</title>
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="style/reset.css">
+        <link rel="stylesheet" href="style/style_index.css">
+        <link rel="stylesheet" href="style/test.css">
+
+    </head>
+    <body>
+        <header>
+
+            <div class="header1">
+                <div class="menu-burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="logo">
+                    <img src="images/logo_index.png"/>
+                </div>
+            </div>
+
+            <div class="connexion-inscrip">
+                <a class="connexion">Connexion</a>
+                <a class="inscription">S'inscrire</a>
+            </div>
+
+        </header>
+
+            <div class="bandeau_noir">
+                <!-- <div class="search">
+                    <div class ="barreRecherche">
+                        <input type="text" id="mySearch" name="recherche" onkeyup="myFunction()" placeholder="Recherche.."/>
+                    </div>
+                </div> -->
+                <div class="fil_ariane">
+                    <p>Accueil / Calculatrices / Calculatrice – Frais</p>
+                </div>
+                <br><br>
+                <div class="info_title">
+                    <h5>Calculatrice - Frais</h5>
+                </div>
+                
+            </div>
+            
+            <div class="second-container">
+
+                <!-- a mettre dans le tab noir -->
+                
+
+                
+
+                <!-- <div class="center_cards">
+                    <div class="calculator_cards">
+                    <div class="content">
+                        <p class="date">Lorem</p>
+                        <p class="title">Title Lorem</p>
+                    </div>
+                    <img src="images/logo_index.png" alt="calc" />
+                    </div>
+                </div> -->
+
+                <div class="calc_infos">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut lacinia justo. In accumsan in elit nec blandit. Duis malesuada mauris est, eget porttitor lacus luctus ut. Nulla a nunc sit amet sapien pretium vulputate non sed mi. Pellentesque a ipsum metus. Etiam eleifend commodo quam in molestie. Phasellus mauris nibh, consequat at dui et, consequat aliquam augue. Mauris faucibus viverra erat quis pharetra. Morbi congue, dui at vestibulum fringilla, elit nisi venenatis nibh, eget euismod turpis quam nec velit. Donec elementum arcu vel nisi mollis posuere. Donec condimentum, dui ut efficitur malesuada, turpis dui blandit tellus, in suscipit metus orci quis metus. Morbi egestas interdum lacus in ultrices. Donec dolor dolor, porta eu viverra ac, fermentum id justo. Cras maximus dictum ultricies.</p>
+                </div>
+                <div id="calculator_1">
+                    <form id="calcForm">
+                        <table>
+                            <p>Détails de votre investissement</p>
+                            <br><br>
+                            <tr>
+                                <td class="info">
+                                    <label for="apport1">Apport: </label>
+                                </td>
+                                <td>
+                                    <input type="number" id="apport1" name="apport1" placeholder="Entrez le montant de votre apport">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="info">
+                                    <label for="taux_rendement">Taux de rendement annuel prévu : </label>
+                                </td>
+                                <td>
+                                    <input type="number" id="taux_rendement" name="taux_rendement" placeholder="Taux %" min="0.01" max="100">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="info">
+                                    <label for="frais_annuel">Frais annuel : </label>
+                                </td>
+                                <td>
+                                    <input type="number" id="frais_annuel" name="frais_annuel" placeholder="Taux %" min="0.01" max="100">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="info">
+                                    <label for="année1">Années: </label>
+                                </td>
+                                <td>
+                                    <input type="number" id="année1" name="année" min="1" max="50">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="btn_calc">
+                                    <input type="submit" id="btn_calc" value="Calculer" onclick="calculerFrais()">
+                                </td>
+                            </tr>
+                           
+                        </table>
+                    </form>
+
+                        <div class="show_result" colspan="2" id="resultat"></div>
+                    
+
+                    
+                </div>
+                <script>
+                    function calculerFrais() {
+                        // Récupérer les valeurs des champs
+                        var apport = parseFloat(document.getElementById('apport1').value);
+                        var tauxRendement = parseFloat(document.getElementById('taux_rendement').value);
+                        var fraisAnnuel = parseFloat(document.getElementById('frais_annuel').value);
+                        var années = parseInt(document.getElementById('année1').value);
+            
+                        // Valider les entrées
+                        if (isNaN(apport) || isNaN(tauxRendement) || isNaN(fraisAnnuel) || isNaN(années)) {
+                            alert("Veuillez entrer des valeurs numériques valides.");
+                            return;
+                        }
+                        
+                        fraisTotal = apport * (tauxRendement / 100) * années + fraisAnnuel * années;
+            
+                        
+                        document.getElementById('resultat').innerHTML = "Les frais totaux sont de : " + fraisTotal.toFixed(2) + " euros";
+                    }
+                </script>
+            </div>
+        </div>
+        
+        
+    </body>
+
+    <footer>
+        <div class="flex1">
+            <a href="file:///C:/Users/floca/Desktop/HETIC/Projet%20web/projet_web/test.html"><img src="Images/logo_index.png" alt="logo_smart_financy" width=150px>
+        </div>
+        <section class="flex">
+           
+            <div>
+                <h3>A propos</h3>
+                <ul>
+                    <li><a href="https://www.airbnb.fr/help/home?from=footer">Centre d'aide</a></li>
+                    <li><a href="https://www.airbnb.fr/against-discrimination">Lutte contre la discrimination</a></li>
+                    <li><a href="https://www.airbnb.fr/accessibility">Assistance handicap</a></li>
+                    <li><a href="https://www.airbnb.fr/accessibility">Option d'annulation</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Pages</h3>
+                <ul>
+                    <li><a href="https://www.airbnb.fr/help/home?from=footer">Page 1</a></li>
+                    <li><a href="https://www.airbnb.fr/aircover">Page 2</a></li>
+                    <li><a href="https://www.airbnb.fr/against-discrimination">Page 3</a></li>
+                    <li><a href="https://www.airbnb.fr/accessibility">Page 4</a></li>
+                    <li><a href="https://www.airbnb.fr/accessibility">Page 5</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Ressources</h3>
+                <ul>
+                    <li><a href="https://www.airbnb.fr/help/home?from=footer">Newsroom</a></li>
+                    <li><a href="https://www.airbnb.fr/aircover">Nouvelles fonctionnalités</a></li>
+                    <li><a href="https://www.airbnb.fr/against-discrimination">Carrières</a></li>
+                    <li><a href="https://www.airbnb.fr/accessibility">Investisseurs</a></li>
+                    <li><a href="https://www.airbnb.fr/accessibility">Cartes cadeaux</a></li>
+                    <li><a href="https://www.airbnb.fr/accessibility">J'ai un problème</a></li>
+                </ul>
+            </div>
+        </section>
+        
+            <div class="flex2">
+                <p>© 2024 Smart Financy,Inc</p>
+                <ul>
+                    <li><a href="https://www.airbnb.fr/terms/privacy_policy">Confidentialité</a></li>
+                    <li><a href="https://www.airbnb.fr/terms">Conditions générales</a></li>
+                    <li><a href="https://www.airbnb.fr/terms">Plan du site</a></li>
+                    <li><a href="https://www.airbnb.fr/terms">Fonctionnement du site</a></li>
+                    <li><a href="https://www.airbnb.fr/terms">Infos surs l'entreprise</a></li>
+                </ul>
+            
+            
+            
+                <a href="Langues">Français (FR)</a>
+                <a>EUR</a>
+            </div>
+        
+    </footer>
+</html>
