@@ -430,3 +430,42 @@ footer ul li {
       border-top: 1px solid #ccc;
      }
      }
+
+     .accueil_inf_top{
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 30px 40px;
+        align-items: center;
+        
+     }
+
+     
+    .info_top{
+      background-color: #222831;
+      max-width:  50%;
+      border-radius: 20px;
+
+    }
+    .info_top{
+      padding: 4vw 4vh;
+      
+    }
+    .info_top p{
+      padding: 2vw 2vh;
+    }
+    .info_top a{
+      display: flex;
+      justify-content: center;
+      text-decoration: none;
+      background-color: #C1A57B;
+      font-size: 14px;
+      line-height:18px;
+      color: black;
+      padding: 10px 30px;
+      border-radius: 20px;
+      margin: 0 100px;
+    }
+    
