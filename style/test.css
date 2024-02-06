@@ -205,7 +205,7 @@ input[type=text]{background: rgba(255, 255, 255, 0.212);
   .calc_infos{
     color: white;
     font-weight: lighter;
-    margin: 50px 500px 50px;
+    margin: 0 25vw ;
   }
 
   .fil_ariane{
@@ -352,7 +352,7 @@ footer ul li {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 50px 500px 50px;
+  margin: 20vh 25vw ;
 }
 
 
